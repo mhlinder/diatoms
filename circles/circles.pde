@@ -3,7 +3,7 @@ import megamu.mesh.*;
 int w = 800;   // canvas width
 float r = w / 3;   // circle radius
 
-int n = 100;
+int n = 1000;
 float[][] points = new float[n][2];
 
 // The statements in the setup() function 
@@ -14,7 +14,7 @@ void setup() {
   smooth();
   
   for (int i = 0; i < n; i++) {
-    float radius = random(r);
+    float radius = random(3*r/4,r);
     float theta = random(PI*2);
     
     points[i][0] = radius * cos(theta);
@@ -28,22 +28,22 @@ void setup() {
 void draw() { 
   translate(width/2, height/2);
 
-  // Convex hull
-  stroke(0);
-  fill(255);
-  Hull perimeter = new Hull( points );
-  MPolygon region = perimeter.getRegion();
-  region.draw(this);
+  // // Convex hull
+  // stroke(0);
+  // fill(255);
+  // Hull perimeter = new Hull( points );
+  // MPolygon region = perimeter.getRegion();
+  // region.draw(this);
 
-  // // Voronoi
-  // Voronoi v = new Voronoi( points );
-  // MPolygon[] regions = v.getRegions();
+  // Voronoi
+  Voronoi v = new Voronoi( points );
+  MPolygon[] regions = v.getRegions();
 
   for (int i = 0; i < n; i++) {
-    // // Voronoi
-    // stroke(0);
-    // fill(255);
-    // regions[i].draw(this);
+    // Voronoi
+    stroke(0);
+    fill(255);
+    regions[i].draw(this);
 
     // Individual points
     noStroke();
@@ -51,4 +51,5 @@ void draw() {
     ellipseMode(CENTER);
     ellipse(points[i][0], points[i][1], 2, 2);
   }
+  save("file.png");
 } 

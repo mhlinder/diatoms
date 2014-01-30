@@ -4,7 +4,7 @@ int w = 800;   // canvas width
 float r = w / 3;   // circle radius
 
 
-int nreg = 3;
+int nreg = 4;
 float[] bands = new float[2*(nreg+1)];
 
 float pad = 10;
@@ -15,13 +15,13 @@ float[][][] points = new float[nreg+1][n][2];
 float[][] allpoints = new float[n*(nreg+1)][2];
 
 int bg = 255;
-int fg = 255;
+float fg = random(255);
 float[] shades = new float[nreg];
 
 void setup() {
   size(w,w);
-  background(bg);
   smooth();
+  background(bg);
 
   for (int i = 0; i < shades.length; i++) {
     shades[i] = random(255);

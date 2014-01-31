@@ -9,12 +9,13 @@ float[] bands = new float[2*(nreg+1)];
 
 float pad = 10;
 
-int n = 200;
+// int n = int(random(100,500));
+int n = 400;
 // nreg+1 so that we have a boundary layer at the outer edge
 float[][][] points = new float[nreg+1][n][2];
 float[][] allpoints = new float[n*(nreg+1)][2];
 
-int bg = 255;
+float bg = random(200,255);
 float fg = random(255);
 float[] shades = new float[nreg];
 
@@ -31,18 +32,16 @@ void setup() {
     if (i == 0) { // first band
       bands[0] = pad;
       bands[1] = random(bands[0],r);
-    } else if (i == bands.length - 2) { // last, padded band
+    } else if (2*i == bands.length - 1) { // last, padded band
         bands[2*i] = r;
         bands[2*i+1] = r+pad;
-    } else if (i == bands.length - 4) { // second-to-last band
+    } else if (2*i == bands.length - 2) { // second-to-last band
       bands[2*i] = bands[2*i-1] + pad;
       bands[2*i+1] = r;
     } else { // middle bands
       bands[2*i] = bands[2*i-1] + pad;
       bands[2*i+1] = random(bands[2*i], r);
     }
-    println(bands[2*i]);
-    println(bands[2*i + 1]);
   }
 
   for (int j = 0; j < nreg+1; j++) {
@@ -78,5 +77,5 @@ void draw() {
       // ellipse(allpoints[i+j*n][0], allpoints[i+j*n][1], 2, 2);
     }
   }
-  // save("file.png");
+  save("file.png");
 } 

@@ -12,7 +12,6 @@ float pad = 10;
 // int n = int(random(100,500));
 int n = 400;
 // nreg+1 so that we have a boundary layer at the outer edge
-float[][][] points = new float[nreg+1][n][2];
 float[][] allpoints = new float[n*(nreg+1)][2];
 
 float bg = random(200,255);

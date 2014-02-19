@@ -7,7 +7,7 @@ PImage img;
 IntDict colors;
 
 void setup() {
-  size(900,900);
+  size(1000,1000);
   noStroke();
 
   img = loadImage("catfur.JPG");
@@ -40,10 +40,11 @@ void setup() {
   }
 
   background(palette[0]);
-  for (int i = 0; i < 30; i++) {
-    for (int j = 0; j < 30; j++) {
-      fill(palette[i*30 + j]);
-      rect(i*30 + 5, j*30 + 5, 10, 10);
+  for (int i = 0; i < 100; i++) {
+    for (int j = 0; j < 100; j++) {
+      fill(palette[i*100 + j]);
+      rect(i*10 + 5, j*10 + 5, 10, 10);
     }
   }
+  save("../misc/file12.png");
 }

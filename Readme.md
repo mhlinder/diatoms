@@ -3,6 +3,6 @@ Inspired by the colors of these
 and these
 [stems](http://www.creativeapplications.net/processing/stem-by-diana-lange-building-stems-from-colour-with-processing/).
 
-![banded](https://raw2.github.com/mhlinder/diatoms/master/misc/file10.png)
+![banded](https://raw.github.com/mhlinder/diatoms/master/misc/file10.png)
 ![banded](https://raw.github.com/mhlinder/diatoms/master/misc/file11.png)
-![banded](https://raw2.github.com/mhlinder/diatoms/master/misc/file8.png)
+![banded](https://raw.github.com/mhlinder/diatoms/master/misc/file8.png)
